@@ -1,104 +1,158 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fnexi-launch%2Ffinwise-landing-page)
 
-# Finwise - Next.js + Tailwind Landing Page Template
+# Social Stock Exchange - Landing Page
 
-Finwise is a lightweight, easily configurable, and customizable **Next.js** and **Tailwind CSS** landing page template. It’s built to be adaptable, performant, and perfect for any product launch, portfolio, or promotional site.
+A modern, responsive landing page for the Social Stock Exchange platform built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
-Try out the demo here: [https://finwise-omega.vercel.app](https://finwise-omega.vercel.app).
+## 🚀 Features
 
-Please check out the documentation below to get started.
+- **Modern Design**: Clean, professional design targeting influencers and content creators
+- **Responsive**: Fully responsive design that works on all devices
+- **Interactive Elements**:
+  - Mouse-following cursor effects in hero section
+  - Smooth scroll animations
+  - Dynamic scrolling social media platform showcase
+- **Waitlist Integration**: Seamless Supabase integration for collecting user signups
+- **Performance Optimized**: Built with Next.js 14 for optimal performance
+- **TypeScript**: Fully typed for better development experience
 
----
+## 🛠️ Tech Stack
 
-## Features
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Database**: Supabase
+- **Deployment**: Vercel
+- **Font**: Inter
 
-- **Next.js** app router with **TypeScript**
-- **Tailwind CSS** v3 for flexible styling customization
-- Smooth transitions powered by **Framer Motion**
-- Built-in **font optimization** with [next/font](https://nextjs.org/docs/app/api-reference/components/font)
-- Automatic **image optimization** via [next/image](https://nextjs.org/docs/app/building-your-application/optimizing/images)
-- Access to **31+ icon packs** via [React Icons](https://react-icons.github.io/react-icons/)
-- Near-perfect **Lighthouse score**
-- Modular, responsive, and **scalable components**
-- **Free lifetime updates**
+## 📝 Project Structure
 
----
+```
+src/
+├── app/                 # App router pages
+├── components/          # React components
+├── data/               # Static data and configuration
+├── lib/                # Utility libraries (Supabase client)
+└── types.ts            # TypeScript type definitions
+```
 
-## Sections
-
-- Hero
-- Partners or Clients Logos
-- Features
-- Pricing
-- Testimonials
-- FAQ
-- Statistics
-- CTA
-- Footer
-
----
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-Before starting, make sure you have the following installed:
+- Node.js 18+
+- npm or yarn
+- Supabase account
 
-- **Node.js**: Version 18 or later
-- **npm**: Version 8 or later (bundled with Node.js)
-- **Code editor**: [VS Code](https://code.visualstudio.com/) is recommended.
+### Installation
 
-### Steps
+1. **Clone the repository**
 
-1. **Install dependencies**: Run `npm install`
-2. **Run the development server**: `npm run dev`
-3. **View your project**: Open [localhost:3000](http://localhost:3000)
+   ```bash
+   git clone [repository-url]
+   cd SSE-landing-page
+   ```
 
----
+2. **Install dependencies**
 
-## Customization
+   ```bash
+   npm install
+   ```
 
-1. **Edit colors**: Update `globals.css` for primary, secondary, background, and accent colors.
-2. **Update site details**: Customize `siteDetails.ts` in `/src/data` to reflect your brand and site info.
-3. **Modify content**: Files in `/src/data` handle data for navigation, features, pricing, testimonials, and more.
-4. **Replace favicon**: Add your icon to `/src/app/favicon.ico`.
-5. **Add images**: Update `public/images` for Open Graph metadata (e.g., `og-image.jpg`, `twitter-image.jpg`).
+3. **Set up environment variables**
 
----
+   Create a `.env.local` file in the root directory:
 
-## Deploying on Vercel
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-project-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   ```
 
-The fastest way to deploy Finwise is on [Vercel](https://vercel.com/). Simply click the "Deploy with Vercel" button at the top of this README, or check the [Next.js deployment docs](https://vercel.com/docs/deployments/deployment-methods) for other deployment options.
+4. **Set up Supabase database**
 
----
+   Create a table named `sse_waitlist` with the following SQL:
 
-## Contributing
+   ```sql
+   CREATE TABLE sse_waitlist (
+     id BIGSERIAL PRIMARY KEY,
+     first_name TEXT NOT NULL,
+     last_name TEXT NOT NULL,
+     primary_email TEXT NOT NULL,
+     primary_influence_platform TEXT NOT NULL,
+     created_at TIMESTAMPTZ DEFAULT NOW()
+   );
+   ```
 
-Finwise is an open-source project, and we welcome contributions from the community! If you have ideas for new components, designs, layouts, or optimizations, please join us in making Finwise even better.
+5. **Run the development server**
 
-### How to Contribute
+   ```bash
+   npm run dev
+   ```
 
-1. **Fork the Repository**: Clone it locally.
-2. **Create a New Branch**: For example, `feature/new-section` or `fix/style-issue`.
-3. **Develop and Test**: Make sure your changes work and don't break existing functionality.
-4. **Submit a Pull Request**: Open a pull request with a clear description of your changes, and we'll review it.
+6. **View your project**: Open [localhost:3000](http://localhost:3000)
 
-### Ideas for Contributions
+## 🚀 Deployment
 
-- New component sections (team introductions, comparison table, case studies, etc.)
-- Additional page variants (e.g., agency, eCommerce, portfolio layouts)
-- Additional themes
-- Documentation updates, tutorials, or guides
+### Deploy to Vercel
 
----
+1. **Push to GitHub**: Ensure your code is pushed to a GitHub repository
 
-## Community and Support
+2. **Connect to Vercel**:
 
-Join our community discussions on GitHub to share ideas, ask questions, or suggest improvements. Let’s build something amazing together!
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Configure environment variables in Vercel dashboard
 
+3. **Environment Variables**: Add the following to your Vercel project settings:
 
---- 
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
-## License
+4. **Deploy**: Vercel will automatically deploy your application
 
-This project is open-source and available under the MIT License. Feel free to use, modify, and distribute it for personal or commercial projects.
+## 📊 Analytics & Monitoring
+
+- Add Google Analytics ID to `src/data/siteDetails.ts`
+- Monitor form submissions through Supabase dashboard
+- Track user engagement through Vercel Analytics
+
+## 🎨 Customization
+
+### Brand Colors
+
+Update colors in `src/app/globals.css`:
+
+- `--primary`: Primary yellow color
+- `--secondary`: Secondary blue color
+- `--foreground`: Text color
+
+### Content
+
+Update content in the `src/data/` directory:
+
+- `hero.ts`: Hero section content
+- `faq.ts`: FAQ questions and answers
+- `benefits.tsx`: Platform features
+- `siteDetails.ts`: Site metadata
+
+## 🔧 Build & Production
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Lint code
+npm run lint
+```
+
+## 📧 Contact
+
+For questions about the Social Stock Exchange platform, email: thesocialstockexchange@gmail.com
+
+## 📄 License
+
+This project is private and proprietary to Social Stock Exchange.

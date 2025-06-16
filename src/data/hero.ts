@@ -1,5 +1,5 @@
 export const heroDetails = {
-    heading: 'Smart, Secure, Simple Financial Management',
-    subheading: 'From effortless budgeting to real-time investment insights, Finwise puts you in control of your money like never before',
+    heading: 'Social Stock Exchange',
+    subheading: 'The premier stock market where your audience invests in your success. Join the revolution of influence-based investing.',
     centerImageSrc: '/images/hero-mockup.webp',
 }

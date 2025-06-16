@@ -7,31 +7,35 @@ export const footerDetails: {
     telephone: string;
     socials: ISocials;
 } = {
-    subheading: "Empowering businesses with cutting-edge financial technology solutions.",
+    subheading: "The world's first social stock exchange where influence meets investment. Transform your social capital into real financial opportunities.",
     quickLinks: [
+        {
+            text: "About Us",
+            url: "#about"
+        },
+        {
+            text: "Why Us",
+            url: "#why-us"
+        },
         {
             text: "Features",
             url: "#features"
         },
         {
-            text: "Pricing",
-            url: "#pricing"
-        },
-        {
-            text: "Testimonials",
-            url: "#testimonials"
+            text: "FAQs",
+            url: "#faq"
         }
     ],
-    email: 'address@yoursite.com',
-    telephone: '+1 (123) 456-7890',
+    email: 'contact@socialstockexchange.com',
+    telephone: '+1 (555) 123-SSE1',
     socials: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
-        twitter: 'https://twitter.com/Twitter',
-        facebook: 'https://facebook.com',
+        twitter: 'https://twitter.com/SocialStockEx',
+        facebook: 'https://facebook.com/SocialStockExchange',
         // youtube: 'https://youtube.com',
-        linkedin: 'https://www.linkedin.com',
+        linkedin: 'https://www.linkedin.com/company/social-stock-exchange',
         // threads: 'https://www.threads.net',
-        instagram: 'https://www.instagram.com',
+        instagram: 'https://www.instagram.com/socialstockexchange',
     }
 }

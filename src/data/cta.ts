@@ -1,6 +1,6 @@
 export const ctaDetails = {
-    heading: 'Join Over 1 Million Users To Transform Your Finances',
-    subheading: 'Your journey to financial freedom starts here. Download Finwise today and take the first step towards a brighter financial future!',
+    heading: 'Ready to Transform Your Influence?',
+    subheading: 'Join thousands of creators who are already turning their social capital into real financial opportunities. The future of influence investing starts with you.',
     appStoreUrl: '#',
     googlePlayUrl: '#'
 }

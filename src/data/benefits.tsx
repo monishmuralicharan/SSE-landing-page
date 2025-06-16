@@ -1,72 +1,56 @@
-import { FiBarChart2, FiBriefcase, FiDollarSign, FiLock, FiPieChart, FiShield, FiTarget, FiTrendingUp, FiUser } from "react-icons/fi";
-
-import { IBenefit } from "@/types"
+import { IBenefit } from "@/types";
+import { HiClock, HiLightningBolt, HiShare } from "react-icons/hi";
 
 export const benefits: IBenefit[] = [
     {
-        title: "Smart Budgeting",
-        description: "Take the guesswork out of managing your money. Our AI-powered budgeting tool adapts to your lifestyle and helps you stay on track.",
+        title: "Seamless Trading Experience",
+        description: "Experience the future of influence investing with our intuitive platform designed for both creators and their audiences.",
+        imageSrc: "/images/trading_picture.png",
         bullets: [
             {
-                title: "Intelligent Categorization",
-                description: "Automatically sorts your transactions for crystal-clear insights.",
-                icon: <FiBarChart2 size={26} />
+                title: "Ease of Use",
+                description: "Simple onboarding process that gets you listed and trading within minutes. No complex financial knowledge required.",
+                icon: <HiLightningBolt className="w-6 h-6 text-primary" />
             },
             {
-                title: "Customizable Goals",
-                description: "Set and track financial objectives that matter to you.",
-                icon: <FiTarget size={26} />
-            },
-            {
-                title: "Predictive Analysis",
-                description: "Get ahead of your finances with spending forecasts and alerts.",
-                icon: <FiTrendingUp size={26} />
+                title: "24/7 Trading",
+                description: "The influence never sleeps. Our exchange operates around the clock to capture every moment that impacts your value.",
+                icon: <HiClock className="w-6 h-6 text-primary" />
             }
-        ],
-        imageSrc: "/images/mockup-1.webp"
+        ]
     },
     {
-        title: "Seamless Investing",
-        description: "Start building wealth today, no financial degree required. Finwise makes investing accessible and straightforward.",
+        title: "Real-Time Market Updates",
+        description: "Your stock price reflects your influence in real-time, giving your audience immediate feedback on your success and growth.",
+        imageSrc: "/images/notification_picture.png",
         bullets: [
             {
-                title: "Micro-Investing",
-                description: "Begin with as little as $1 and watch your money grow.",
-                icon: <FiDollarSign size={26} />
+                title: "Instantaneous Updates",
+                description: "Stock prices update in real-time based on your social metrics, viral content, and major life events.",
+                icon: <HiLightningBolt className="w-6 h-6 text-primary" />
             },
             {
-                title: "Expert Portfolios",
-                description: "Choose from investment strategies tailored to your risk tolerance.",
-                icon: <FiBriefcase size={26} />
-            },
-            {
-                title: "Real-Time Performance",
-                description: "Track your investments with easy-to-understand metrics and visuals.",
-                icon: <FiPieChart size={26} />
+                title: "Event-Driven Trading",
+                description: "Major announcements, viral content, or life milestones instantly impact your stock value, creating exciting trading opportunities.",
+                icon: <HiLightningBolt className="w-6 h-6 text-primary" />
             }
-        ],
-        imageSrc: "/images/mockup-2.webp"
+        ]
     },
     {
-        title: "Bank-Grade Security",
-        description: "Your financial data deserves the best protection. Rest easy knowing Finwise employs cutting-edge security measures.",
+        title: "Social Media Integration",
+        description: "Amplify your reach and engage your investor community through seamless social media integration and sharing tools.",
+        imageSrc: "/images/updates_picture.png",
         bullets: [
             {
-                title: "Military-Grade Encryption",
-                description: "Your information is safeguarded with the highest level of encryption.",
-                icon: <FiLock size={26} />
+                title: "Share Your Investments",
+                description: "Built-in sharing tools let your audience showcase their investments in you across all social platforms.",
+                icon: <HiShare className="w-6 h-6 text-primary" />
             },
             {
-                title: "Biometric Authentication",
-                description: "Access your account securely with fingerprint or facial recognition.",
-                icon: <FiUser size={26} />
-            },
-            {
-                title: "Real-Time Fraud Detection",
-                description: "Our system constantly monitors for suspicious activity to keep your money safe.",
-                icon: <FiShield size={26} />
+                title: "Cross-Platform Analytics",
+                description: "Track your influence across YouTube, Instagram, TikTok, Twitter, and more with comprehensive analytics.",
+                icon: <HiLightningBolt className="w-6 h-6 text-primary" />
             }
-        ],
-        imageSrc: "/images/mockup-1.webp"
-    },
-]
+        ]
+    }
+];

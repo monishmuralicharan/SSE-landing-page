@@ -1,44 +1,33 @@
 import Hero from "@/components/Hero";
-import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing/Pricing";
-import FAQ from "@/components/FAQ";
-import Logos from "@/components/Logos";
+import About from "@/components/About";
+import WhyUs from "@/components/WhyUs";
 import Benefits from "@/components/Benefits/Benefits";
+import Endorsements from "@/components/Endorsements";
+import FAQ from "@/components/FAQ";
+import WaitlistForm from "@/components/WaitlistForm";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
-import Stats from "@/components/Stats";
-import CTA from "@/components/CTA";
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <Logos />
+      <About />
+      <WhyUs />
       <Container>
-        <Benefits />
-
         <Section
-          id="pricing"
-          title="Pricing"
-          description="Simple, transparent pricing. No surprises."
+          id="features"
+          title="Platform Features"
+          description="Experience the cutting-edge technology that powers the social stock exchange."
         >
-          <Pricing />
+          <Benefits />
         </Section>
-
-        <Section
-          id="testimonials"
-          title="What Our Clients Say"
-          description="Hear from those who have partnered with us."
-        >
-          <Testimonials />
-        </Section>
-
-        <FAQ />
-
-        <Stats />
-        
-        <CTA />
       </Container>
+      <Endorsements />
+      <Container>
+        <FAQ />
+      </Container>
+      <WaitlistForm />
     </>
   );
 };
