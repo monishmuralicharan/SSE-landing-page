@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiUsers, HiTrendingUp, HiSpeakerphone } from 'react-icons/hi';
+import { HiUsers, HiSpeakerphone } from 'react-icons/hi';
 import Container from './Container';
 import SectionTitle from './SectionTitle';
 
@@ -12,11 +12,6 @@ const WhyUs: React.FC = () => {
             icon: <HiUsers className="w-12 h-12 text-primary" />,
             title: "Enable your audience to invest in your success",
             description: "Turn your followers into stakeholders. Your audience can now put their money where their support is and invest directly in your growing influence."
-        },
-        {
-            icon: <HiTrendingUp className="w-12 h-12 text-primary" />,
-            title: "Earn from your audience's investments",
-            description: "Generate revenue through trading fees, milestone bonuses, and exclusive partnership opportunities based on your stock performance."
         },
         {
             icon: <HiSpeakerphone className="w-12 h-12 text-primary" />,
@@ -45,7 +40,7 @@ const WhyUs: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {benefits.map((benefit, index) => (
                         <motion.div
                             key={index}

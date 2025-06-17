@@ -19,7 +19,7 @@ const About: React.FC = () => {
                         <SectionTitle>
                             <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
                                 Don&apos;t just influence,<br />
-                                <span className="text-secondary">invest in your audience</span>
+                                <span className="text-secondary">let your audience invest in you</span>
                             </h2>
                         </SectionTitle>
                         
@@ -35,12 +35,10 @@ const About: React.FC = () => {
                                 Your influence has value, and now your audience can invest directly in your success.
                             </p>
                             <p>
-                                Whether you&apos;re a YouTuber, TikToker, athlete, or any public figure, our platform transforms your social 
-                                capital into real financial opportunities for both you and your fans.
+                                Whether you&apos;re a YouTuber, TikToker, athlete, or any public figure, give back to the loyal fans that support you, by allowing your audience to invest in your success and be rewarded as your influence expands.
                             </p>
                             <p>
-                                Join thousands of influencers who are already monetizing their audience engagement in ways 
-                                never possible before. The future of creator economy starts here.
+                                Join influencers who are empowering their audience engagement in ways never possible before. The future of the influence based economy starts here.
                             </p>
                         </motion.div>
                     </motion.div>

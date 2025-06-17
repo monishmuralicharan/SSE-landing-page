@@ -7,15 +7,11 @@ export const faqs: IFAQ[] = [
     },
     {
         question: "How does investing work?",
-        answer: "Investing is as easy as opening your account, choosing an influencer, and buying shares. Fans can purchase shares in their favorite creators, and stock prices fluctuate based on real-time social metrics, engagement, and major events."
+        answer: "Investing is as easy as opening your account, choosing an influencer, and buying shares. Fans can purchase shares in their favorite creators, and stock prices fluctuate based on how fans react to real-time social metrics, events, and major announcements."
     },
     {
         question: "When is this exchange active?",
         answer: "The exchange is active 24/7 to account for important events happening at any time of the day that influences the stock. Social media never sleeps, and neither does our exchange."
-    },
-    {
-        question: "How do I earn from my audience's investments?",
-        answer: "As a persona on our platform, you earn revenue sharing from trading fees, milestone bonuses when your stock performs well, and exclusive partnership opportunities based on your stock performance."
     },
     {
         question: "What makes me eligible to join?",

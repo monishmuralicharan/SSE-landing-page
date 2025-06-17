@@ -7,6 +7,6 @@ export const siteDetails = {
     },
     language: 'en-us',
     locale: 'en-US',
-    siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "Social Stock Exchange"
+    siteLogo: '/images/logo.png',
     googleAnalyticsId: '', // e.g. G-XXXXXXX,
 }

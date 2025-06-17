@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Transition } from '@headlessui/react';
 import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
-import { HiOutlineTrendingUp } from 'react-icons/hi';
 
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
@@ -23,7 +23,13 @@ const Header: React.FC = () => {
                 <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <HiOutlineTrendingUp className="text-foreground min-w-fit w-7 h-7" />
+                        <Image 
+                            src={siteDetails.siteLogo} 
+                            alt={siteDetails.siteName}
+                            width={28}
+                            height={28}
+                            className="min-w-fit"
+                        />
                         <span className="inter text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span>

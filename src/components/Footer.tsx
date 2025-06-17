@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { HiOutlineTrendingUp } from 'react-icons/hi';
+import Image from 'next/image';
 
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
@@ -11,7 +11,13 @@ const Footer: React.FC = () => {
             <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div>
                     <Link href="/" className="flex items-center gap-2">
-                        <HiOutlineTrendingUp className="min-w-fit w-5 h-5 md:w-7 md:h-7" />
+                        <Image 
+                            src={siteDetails.siteLogo} 
+                            alt={siteDetails.siteName}
+                            width={28}
+                            height={28}
+                            className="min-w-fit"
+                        />
                         <h3 className="inter text-xl font-semibold cursor-pointer">
                             {siteDetails.siteName}
                         </h3>

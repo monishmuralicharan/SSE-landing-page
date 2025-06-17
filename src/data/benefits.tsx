@@ -30,8 +30,8 @@ export const benefits: IBenefit[] = [
                 icon: <HiLightningBolt className="w-6 h-6 text-primary" />
             },
             {
-                title: "Event-Driven Trading",
-                description: "Major announcements, viral content, or life milestones instantly impact your stock value, creating exciting trading opportunities.",
+                title: "Milestone-Driven Growth",
+                description: "Major milestones will bring you new audience to invest more, increasing your stock value and creating exciting growth opportunities.",
                 icon: <HiLightningBolt className="w-6 h-6 text-primary" />
             }
         ]
