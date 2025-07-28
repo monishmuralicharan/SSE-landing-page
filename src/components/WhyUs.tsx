@@ -2,26 +2,31 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiUsers, HiSpeakerphone } from 'react-icons/hi';
+import { HiChartBar, HiLightningBolt, HiGlobe } from 'react-icons/hi';
 import Container from './Container';
 import SectionTitle from './SectionTitle';
 
 const WhyUs: React.FC = () => {
     const benefits = [
         {
-            icon: <HiUsers className="w-12 h-12 text-primary" />,
-            title: "Enable your audience to invest in your success",
-            description: "Turn your followers into stakeholders. Your audience can now put their money where their support is and invest directly in your growing influence."
+            icon: <HiChartBar className="w-12 h-12 text-blue-600" />,
+            title: "Invest in What You Love",
+            description: "From creators and trends to sports teams and viral products, invest in the culture and people that matter to you. Our platform lets you buy and trade shares in anything that has social value."
         },
         {
-            icon: <HiSpeakerphone className="w-12 h-12 text-primary" />,
-            title: "Grow your influence through publicity",
-            description: "Being listed on our exchange brings exposure to new audiences and validates your influence in the creator economy marketplace."
+            icon: <HiLightningBolt className="w-12 h-12 text-blue-600" />,
+            title: "Early Access to Cultural Trends",
+            description: "Get in early on the next big thing. Whether it's a rising creator, viral trend, or emerging sport, SSE gives you the opportunity to invest before the mainstream catches on."
+        },
+        {
+            icon: <HiGlobe className="w-12 h-12 text-blue-600" />,
+            title: "Diverse Asset Classes",
+            description: "Synthetic creator portfolios, pre-draft athlete trading, college prestige stocks, viral product exchanges, metaverse assets—SSE offers investment opportunities you won't find anywhere else."
         }
     ];
 
     return (
-        <section id="why-us" className="py-20 bg-white">
+        <section id="why-us" className="section-padding bg-gray-50">
             <Container>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -31,16 +36,16 @@ const WhyUs: React.FC = () => {
                     className="text-center mb-16"
                 >
                     <SectionTitle>
-                        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                            Why Join Our Exchange?
+                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                            Why Join SSE?
                         </h2>
                     </SectionTitle>
-                    <p className="text-lg text-foreground-accent max-w-2xl mx-auto">
-                        Transform your influence into a tradeable asset and unlock new revenue streams
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        The first exchange where you can invest in culture, creators, and trends with full transparency and real market dynamics
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {benefits.map((benefit, index) => (
                         <motion.div
                             key={index}
@@ -48,15 +53,17 @@ const WhyUs: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="text-center p-8 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
+                            className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center hover:transform hover:scale-105"
                         >
                             <div className="flex justify-center mb-6">
-                                {benefit.icon}
+                                <div className="p-4 bg-blue-50 rounded-full">
+                                    {benefit.icon}
+                                </div>
                             </div>
-                            <h3 className="text-xl font-bold text-foreground mb-4">
+                            <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
                                 {benefit.title}
                             </h3>
-                            <p className="text-foreground-accent">
+                            <p className="text-gray-600 leading-relaxed">
                                 {benefit.description}
                             </p>
                         </motion.div>

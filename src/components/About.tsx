@@ -7,9 +7,9 @@ import SectionTitle from './SectionTitle';
 
 const About: React.FC = () => {
     return (
-        <section id="about" className="py-20 bg-gray-50">
+        <section id="about" className="section-padding bg-white">
             <Container>
-                <div className="text-center max-w-4xl mx-auto">
+                <div className="text-center max-w-5xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -17,9 +17,9 @@ const About: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <SectionTitle>
-                            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-                                Don&apos;t just influence,<br />
-                                <span className="text-secondary">let your audience invest in you</span>
+                            <h2 className="text-4xl md:text-6xl font-bold text-black mb-8 leading-tight">
+                                The NASDAQ of Culture<br />
+                                <span className="text-blue-600">Where Culture Becomes Investable</span>
                             </h2>
                         </SectionTitle>
                         
@@ -28,17 +28,19 @@ const About: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="space-y-6 text-lg text-foreground-accent"
+                            className="space-y-8 text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed"
                         >
-                            <p>
-                                Social Stock Exchange is the world&apos;s first stock market designed specifically for public personas like you. 
-                                Your influence has value, and now your audience can invest directly in your success.
+                            <p className="text-xl">
+                                SSE is the world&apos;s first hybrid exchange combining sports betting excitement with traditional stock market investing. 
+                                Invest in creators, trends, teams, and ideas that matter to you.
                             </p>
                             <p>
-                                Whether you&apos;re a YouTuber, TikToker, athlete, or any public figure, give back to the loyal fans that support you, by allowing your audience to invest in your success and be rewarded as your influence expands.
+                                Whether you&apos;re a sports bettor, social media fan, or traditional investor, SSE makes investing accessible and unites all these worlds under one exchange. 
+                                In a future driven by social trends, we&apos;re paving the way as the first exchange where cultural relevance becomes investable.
                             </p>
                             <p>
-                                Join influencers who are empowering their audience engagement in ways never possible before. The future of the influence based economy starts here.
+                                Imagine if you could have invested in MrBeast when he had just 100 subscribers, or backed Drake before his first album. 
+                                That&apos;s the opportunity our platform creates: letting you invest early in creators you believe in and grow as they grow.
                             </p>
                         </motion.div>
                     </motion.div>

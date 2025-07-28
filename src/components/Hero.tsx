@@ -32,165 +32,99 @@ const Hero: React.FC = () => {
     return (
         <section
             id="hero"
-            className="relative flex items-center justify-center pb-0 pt-32 md:pt-40 px-5 overflow-hidden"
+            className="relative flex items-center justify-center min-h-screen px-5 overflow-hidden hero-bg"
         >
-            {/* Animated background with grid */}
-            <div className="absolute left-0 top-0 bottom-0 -z-10 w-full">
-                <div className="absolute inset-0 h-full w-full bg-hero-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]">
-                </div>
-            </div>
+            {/* Subtle background elements like Cluely */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
-            {/* Enhanced cursor-following bubble */}
+            {/* Soft floating elements */}
             <motion.div
-                className="fixed w-96 h-96 rounded-full pointer-events-none z-0"
-                style={{
-                    background: 'radial-gradient(circle, rgba(254, 216, 53, 0.15) 0%, rgba(254, 216, 53, 0.05) 50%, transparent 100%)',
-                    filter: 'blur(40px)',
-                }}
+                className="absolute top-20 left-10 w-32 h-32 bg-blue-200 rounded-full opacity-10 blur-xl"
                 animate={{
-                    x: mousePosition.x - 192, // Center the circle on cursor
-                    y: mousePosition.y - 192,
+                    y: [0, -20, 0],
+                    x: [0, 10, 0],
                 }}
                 transition={{
-                    type: "spring",
-                    stiffness: 500,
-                    damping: 30,
-                    mass: 0.5
-                }}
-            />
-
-            {/* Secondary cursor effect */}
-            <motion.div
-                className="fixed w-64 h-64 rounded-full pointer-events-none z-0"
-                style={{
-                    background: 'radial-gradient(circle, rgba(48, 79, 255, 0.1) 0%, rgba(48, 79, 255, 0.03) 50%, transparent 100%)',
-                    filter: 'blur(25px)',
-                }}
-                animate={{
-                    x: mousePosition.x - 128,
-                    y: mousePosition.y - 128,
-                }}
-                transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 25,
-                    mass: 0.8
-                }}
-            />
-
-            {/* Mouse-following animated elements */}
-            <motion.div
-                className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-5"
-                animate={{
-                    x: mousePosition.x * 0.02,
-                    y: mousePosition.y * 0.02,
-                }}
-                transition={{
-                    type: "spring",
-                    stiffness: 50,
-                    damping: 30
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
                 }}
             />
             <motion.div
-                className="absolute w-64 h-64 bg-secondary/10 rounded-full blur-2xl -z-5"
+                className="absolute bottom-20 right-10 w-24 h-24 bg-blue-300 rounded-full opacity-10 blur-xl"
                 animate={{
-                    x: mousePosition.x * -0.01,
-                    y: mousePosition.y * -0.01,
+                    y: [0, 15, 0],
+                    x: [0, -10, 0],
                 }}
                 transition={{
-                    type: "spring",
-                    stiffness: 40,
-                    damping: 30
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut"
                 }}
             />
 
-            {/* Floating icons animation */}
-            <motion.div
-                className="absolute top-20 left-10 text-4xl opacity-20"
-                animate={{
-                    y: Math.sin(Date.now() * 0.001) * 10,
-                    x: mousePosition.x * 0.01,
-                }}
-                transition={{ type: "spring", stiffness: 100 }}
-            >
-                📈
-            </motion.div>
-            <motion.div
-                className="absolute top-40 right-20 text-3xl opacity-20"
-                animate={{
-                    y: Math.sin(Date.now() * 0.002) * 15,
-                    x: mousePosition.x * -0.005,
-                }}
-                transition={{ type: "spring", stiffness: 80 }}
-            >
-                💰
-            </motion.div>
-            <motion.div
-                className="absolute bottom-40 left-20 text-3xl opacity-20"
-                animate={{
-                    y: Math.sin(Date.now() * 0.0015) * 12,
-                    x: mousePosition.x * 0.008,
-                }}
-                transition={{ type: "spring", stiffness: 90 }}
-            >
-                🚀
-            </motion.div>
-
-            <div className="absolute left-0 right-0 bottom-0 backdrop-blur-[2px] h-40 bg-gradient-to-b from-transparent via-[rgba(233,238,255,0.5)] to-[rgba(202,208,230,0.5)]">
-            </div>
-
-            <div className="text-center relative z-10">
+            <div className="text-center relative z-20 max-w-4xl mx-auto">
                 <motion.h1 
-                    className="text-4xl md:text-6xl md:leading-tight font-bold text-foreground max-w-lg md:max-w-2xl mx-auto"
+                    className="text-5xl md:text-7xl font-bold text-black leading-tight mb-6"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    {heroDetails.heading}
+                    Social Stock Exchange
                 </motion.h1>
+                
                 <motion.p 
-                    className="mt-4 text-foreground max-w-lg mx-auto"
+                    className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    {heroDetails.subheading}
+                    The first exchange where you can invest in culture, creators, and trends. Join the revolution of social investing.
                 </motion.p>
+                
                 <motion.div 
-                    className="mt-6 flex flex-col sm:flex-row items-center sm:gap-4 w-fit mx-auto"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
                     <button 
                         onClick={scrollToWaitlist}
-                        className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors font-semibold"
+                        className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2"
                     >
-                        Join the Community
+                        <span>Join Waitlist</span>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
                     </button>
                     <button 
                         onClick={handleContactUs}
-                        className="text-secondary border border-secondary hover:bg-secondary hover:text-white px-8 py-3 rounded-full transition-colors font-semibold mt-3 sm:mt-0"
+                        className="text-blue-600 hover:text-blue-700 underline font-medium text-lg transition-colors"
                     >
                         Contact Us
                     </button>
                 </motion.div>
+
                 <motion.div
+                    className="relative"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.8 }}
                 >
-                    <Image
-                        src={heroDetails.centerImageSrc}
-                        width={384}
-                        height={340}
-                        quality={100}
-                        sizes="(max-width: 768px) 100vw, 384px"
-                        priority={true}
-                        unoptimized={true}
-                        alt="Social Stock Exchange Platform"
-                        className='relative mt-12 md:mt-16 mx-auto z-10'
-                    />
+                    <div className="relative inline-block">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-200/20 to-purple-200/20 rounded-2xl blur-2xl"></div>
+                        <Image
+                            src={heroDetails.centerImageSrc}
+                            width={500}
+                            height={400}
+                            quality={100}
+                            sizes="(max-width: 768px) 100vw, 500px"
+                            priority={true}
+                            unoptimized={true}
+                            alt="Social Stock Exchange Platform"
+                            className='relative rounded-2xl shadow-2xl'
+                        />
+                    </div>
                 </motion.div>
             </div>
         </section>

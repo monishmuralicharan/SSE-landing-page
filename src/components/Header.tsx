@@ -20,9 +20,9 @@ const Header: React.FC = () => {
     return (
         <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
+                <nav className="shadow-md md:shadow-none bg-white/90 backdrop-blur-sm md:bg-transparent mx-auto flex justify-between items-center py-4 px-5 md:py-8">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
+                    <Link href="/" className="flex items-center gap-3 relative z-10">
                         <Image 
                             src={siteDetails.siteLogo} 
                             alt={siteDetails.siteName}
@@ -30,23 +30,28 @@ const Header: React.FC = () => {
                             height={28}
                             className="min-w-fit"
                         />
-                        <span className="inter text-xl font-semibold text-foreground cursor-pointer">
-                            {siteDetails.siteName}
-                        </span>
+                        <div className="flex flex-col">
+                            <span className="text-lg font-bold text-black cursor-pointer leading-tight">
+                                SSE
+                            </span>
+                            <span className="text-sm font-medium text-gray-600 cursor-pointer leading-tight">
+                                Social Stock Exchange
+                            </span>
+                        </div>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-6">
+                    <ul className="hidden md:flex space-x-8">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
+                                <Link href={item.url} className="text-gray-600 hover:text-black transition-colors font-medium">
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <Link href="#waitlist" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
-                                Join the Community
+                            <Link href="#waitlist" className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-lg transition-all duration-200 font-semibold">
+                                Join Waitlist
                             </Link>
                         </li>
                     </ul>
@@ -56,7 +61,7 @@ const Header: React.FC = () => {
                         <button
                             onClick={toggleMenu}
                             type="button"
-                            className="bg-primary text-black focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+                            className="bg-black text-white focus:outline-none rounded-lg w-10 h-10 flex items-center justify-center"
                             aria-controls="mobile-menu"
                             aria-expanded={isOpen}
                         >
@@ -81,18 +86,18 @@ const Header: React.FC = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-                <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
-                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
+                <div id="mobile-menu" className="md:hidden bg-white/95 backdrop-blur-sm shadow-lg">
+                    <ul className="flex flex-col space-y-4 pt-4 pb-6 px-6">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
+                                <Link href={item.url} className="text-gray-600 hover:text-black block font-medium" onClick={toggleMenu}>
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <Link href="#waitlist" className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
-                                Join the Community
+                            <Link href="#waitlist" className="bg-black hover:bg-gray-800 text-white px-5 py-2 rounded-lg block w-fit font-semibold" onClick={toggleMenu}>
+                                Join Waitlist
                             </Link>
                         </li>
                     </ul>

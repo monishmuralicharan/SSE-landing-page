@@ -6,17 +6,19 @@ import { childVariants } from "./BenefitSection"
 const BenefitBullet: React.FC<IBenefitBullet> = ({ title, description, icon }: IBenefitBullet) => {
     return (
         <motion.div
-            className="flex flex-col items-center mt-8 gap-3 lg:gap-5 lg:flex-row lg:items-start"
+            className="flex flex-col items-center mt-8 gap-4 lg:gap-6 lg:flex-row lg:items-start"
             variants={childVariants}
         >
-            <div className="flex justify-center mx-auto lg:mx-0 flex-shrink-0 mt-3 w-fit">
-                {icon}
+            <div className="flex justify-center mx-auto lg:mx-0 flex-shrink-0 w-fit">
+                <div className="p-3 bg-blue-50 rounded-full">
+                    {icon}
+                </div>
             </div>
-            <div>
-                <h4 className="text-lg font-semibold">
+            <div className="text-center lg:text-left">
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">
                     {title}
                 </h4>
-                <p className="text-base text-foreground-accent">
+                <p className="text-base text-gray-600 leading-relaxed">
                     {description}
                 </p>
             </div>
