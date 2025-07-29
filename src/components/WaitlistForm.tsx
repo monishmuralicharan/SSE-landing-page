@@ -46,25 +46,21 @@ const WaitlistForm: React.FC = () => {
 
     if (isSubmitted) {
         return (
-            <section id="waitlist" className="mt-10 mb-5 lg:my-20">
-                <div className="relative h-full w-full z-10 mx-auto py-12 sm:py-20">
-                    <div className="h-full w-full">
-                        <div className="rounded-3xl opacity-95 absolute inset-0 -z-10 h-full w-full bg-[#050a02] bg-[linear-gradient(to_right,#12170f_1px,transparent_1px),linear-gradient(to_bottom,#12170f_1px,transparent_1px)] bg-[size:6rem_4rem]">
-                            <div className="rounded-3xl absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_600px_at_50%_500px,#1C1C02,transparent)]"></div>
-                        </div>
-
+            <section id="waitlist" className="section-padding bg-gradient-to-b from-green-50 to-green-100">
+                <div className="relative mx-auto py-16 sm:py-24">
+                    <div className="relative z-10 text-center px-5 max-w-4xl mx-auto">
                         <motion.div 
-                            className="h-full flex flex-col items-center justify-center text-white text-center px-5"
+                            className="text-center"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div className="text-6xl mb-6">🎉</div>
-                            <h2 className="text-2xl sm:text-3xl md:text-5xl md:leading-tight font-semibold mb-4 max-w-2xl">
-                                Welcome to the Future!
+                            <div className="text-6xl mb-8">🎉</div>
+                            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
+                                Welcome to the Future of Investing!
                             </h2>
-                            <p className="mx-auto max-w-xl md:px-5 text-lg">
-                                Thank you for joining our waitlist. We&apos;ll be in touch soon with exclusive updates about the Social Stock Exchange.
+                            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                                Thank you for joining our waitlist. We&apos;ll be in touch soon with exclusive updates about the Social Stock Exchange and early access opportunities.
                             </p>
                         </motion.div>
                     </div>
@@ -74,96 +70,98 @@ const WaitlistForm: React.FC = () => {
     }
 
     return (
-        <section id="waitlist" className="mt-10 mb-5 lg:my-20">
-            <div className="relative h-full w-full z-10 mx-auto py-12 sm:py-20">
-                <div className="h-full w-full">
-                    <div className="rounded-3xl opacity-95 absolute inset-0 -z-10 h-full w-full bg-[#050a02] bg-[linear-gradient(to_right,#12170f_1px,transparent_1px),linear-gradient(to_bottom,#12170f_1px,transparent_1px)] bg-[size:6rem_4rem]">
-                        <div className="rounded-3xl absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_600px_at_50%_500px,#1C1C02,transparent)]"></div>
-                    </div>
+        <section id="waitlist" className="section-padding bg-white">
+            <div className="relative mx-auto py-16 sm:py-24">
+                <div className="relative z-10 text-center px-5 max-w-4xl mx-auto">
+                    <motion.h2 
+                        className="text-3xl sm:text-4xl md:text-6xl font-bold text-black mb-6 leading-tight"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        Get Early Access to the Future of Investing
+                    </motion.h2>
 
-                    <div className="h-full flex flex-col items-center justify-center text-white text-center px-5">
-                        <motion.h2 
-                            className="text-2xl sm:text-3xl md:text-5xl md:leading-tight font-semibold mb-4 max-w-2xl"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            Ready to Transform Your Influence?
-                        </motion.h2>
+                    <motion.p 
+                        className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: true }}
+                    >
+                        Join thousands of investors who are ready to invest in culture, creators, and trends. 
+                        Be among the first to access the world's first social stock exchange.
+                    </motion.p>
 
-                        <motion.p 
-                            className="mx-auto max-w-xl md:px-5 mb-8"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: true }}
-                        >
-                            Join thousands of creators who are already turning their social capital into real financial opportunities.
-                        </motion.p>
-
-                        <motion.form 
-                            onSubmit={handleSubmit}
-                            className="w-full max-w-md space-y-4"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="grid grid-cols-2 gap-4">
-                                <input
-                                    type="text"
-                                    name="first_name"
-                                    placeholder="First Name"
-                                    value={formData.first_name}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-primary focus:bg-white/20 transition-all"
-                                />
-                                <input
-                                    type="text"
-                                    name="last_name"
-                                    placeholder="Last Name"
-                                    value={formData.last_name}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-primary focus:bg-white/20 transition-all"
-                                />
-                            </div>
-
+                    <motion.form 
+                        onSubmit={handleSubmit}
+                        className="w-full max-w-lg mx-auto space-y-6"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="grid grid-cols-2 gap-4">
                             <input
-                                type="email"
-                                name="primary_email"
-                                placeholder="Primary Email"
-                                value={formData.primary_email}
+                                type="text"
+                                name="first_name"
+                                placeholder="First Name"
+                                value={formData.first_name}
                                 onChange={handleInputChange}
                                 required
-                                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-primary focus:bg-white/20 transition-all"
+                                className="px-4 py-4 rounded-lg border border-gray-300 text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all text-lg"
                             />
-
-                            <textarea
-                                name="primary_influence_platform"
-                                placeholder="Primary Influence Platform (e.g., YouTube, Instagram, TikTok)"
-                                value={formData.primary_influence_platform}
+                            <input
+                                type="text"
+                                name="last_name"
+                                placeholder="Last Name"
+                                value={formData.last_name}
                                 onChange={handleInputChange}
                                 required
-                                rows={3}
-                                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-primary focus:bg-white/20 transition-all resize-none"
+                                className="px-4 py-4 rounded-lg border border-gray-300 text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all text-lg"
                             />
+                        </div>
 
-                            {error && (
-                                <p className="text-red-400 text-sm">{error}</p>
+                        <input
+                            type="email"
+                            name="primary_email"
+                            placeholder="Primary Email"
+                            value={formData.primary_email}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full px-4 py-4 rounded-lg border border-gray-300 text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all text-lg"
+                        />
+
+                        <textarea
+                            name="primary_influence_platform"
+                            placeholder="What interests you most? (e.g., Creator investing, Sports trading, Viral trends, etc.)"
+                            value={formData.primary_influence_platform}
+                            onChange={handleInputChange}
+                            required
+                            rows={3}
+                            className="w-full px-4 py-4 rounded-lg border border-gray-300 text-black placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all resize-none text-lg"
+                        />
+
+                        {error && (
+                            <p className="text-red-500 text-sm">{error}</p>
+                        )}
+
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        >
+                            {isSubmitting ? 'Joining...' : (
+                                <>
+                                    <span>Join Waitlist</span>
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                    </svg>
+                                </>
                             )}
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-lg transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {isSubmitting ? 'Joining...' : 'Join the Community'}
-                            </button>
-                        </motion.form>
-                    </div>
+                        </button>
+                    </motion.form>
                 </div>
             </div>
         </section>

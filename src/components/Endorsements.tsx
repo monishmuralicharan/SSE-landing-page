@@ -15,29 +15,30 @@ import {
     FaPinterest,
     FaLinkedin
 } from 'react-icons/fa';
+import { HiLightningBolt, HiGlobe, HiChartBar, HiStar, HiFire } from 'react-icons/hi';
 import Container from './Container';
 import SectionTitle from './SectionTitle';
 
 const Endorsements: React.FC = () => {
-    const platforms = [
-        { icon: <FaYoutube className="w-12 h-12" />, name: "YouTube", color: "#FF0000" },
-        { icon: <FaTwitter className="w-12 h-12" />, name: "Twitter", color: "#1DA1F2" },
-        { icon: <FaInstagram className="w-12 h-12" />, name: "Instagram", color: "#E4405F" },
-        { icon: <FaTiktok className="w-12 h-12" />, name: "TikTok", color: "#000000" },
-        { icon: <FaFacebook className="w-12 h-12" />, name: "Facebook", color: "#1877F2" },
-        { icon: <FaReddit className="w-12 h-12" />, name: "Reddit", color: "#FF4500" },
-        { icon: <FaDiscord className="w-12 h-12" />, name: "Discord", color: "#5865F2" },
-        { icon: <FaTwitch className="w-12 h-12" />, name: "Twitch", color: "#9146FF" },
-        { icon: <FaSnapchatGhost className="w-12 h-12" />, name: "Snapchat", color: "#FFFC00" },
-        { icon: <FaPinterest className="w-12 h-12" />, name: "Pinterest", color: "#BD081C" },
-        { icon: <FaLinkedin className="w-12 h-12" />, name: "LinkedIn", color: "#0077B5" }
+    const assetClasses = [
+        { icon: <FaYoutube className="w-12 h-12" />, name: "Creator Stocks", color: "#FF0000" },
+        { icon: <HiLightningBolt className="w-12 h-12" />, name: "Viral Trends", color: "#3B82F6" },
+        { icon: <HiGlobe className="w-12 h-12" />, name: "Sports Trading", color: "#10B981" },
+        { icon: <HiChartBar className="w-12 h-12" />, name: "College Prestige", color: "#8B5CF6" },
+        { icon: <HiStar className="w-12 h-12" />, name: "Metaverse Assets", color: "#F59E0B" },
+        { icon: <HiFire className="w-12 h-12" />, name: "Viral Products", color: "#EF4444" },
+        { icon: <FaTiktok className="w-12 h-12" />, name: "Social Trends", color: "#000000" },
+        { icon: <FaInstagram className="w-12 h-12" />, name: "Influencer Portfolios", color: "#E4405F" },
+        { icon: <FaTwitter className="w-12 h-12" />, name: "Cultural Movements", color: "#1DA1F2" },
+        { icon: <FaDiscord className="w-12 h-12" />, name: "Community Tokens", color: "#5865F2" },
+        { icon: <FaTwitch className="w-12 h-12" />, name: "Gaming Assets", color: "#9146FF" }
     ];
 
-    // Duplicate platforms for seamless scrolling
-    const duplicatedPlatforms = [...platforms, ...platforms];
+    // Duplicate asset classes for seamless scrolling
+    const duplicatedAssetClasses = [...assetClasses, ...assetClasses];
 
     return (
-        <section className="py-20 bg-gray-50 overflow-hidden">
+        <section className="section-padding bg-white overflow-hidden">
             <Container>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -47,12 +48,12 @@ const Endorsements: React.FC = () => {
                     className="text-center mb-16"
                 >
                     <SectionTitle>
-                        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                            Trusted by Personas From
+                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                            Invest in Diverse Asset Classes
                         </h2>
                     </SectionTitle>
-                    <p className="text-lg text-foreground-accent max-w-2xl mx-auto">
-                        Join creators from all major platforms who are already building their influence empire
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        From creator stocks to viral trends, SSE offers investment opportunities you won't find anywhere else
                     </p>
                 </motion.div>
 
@@ -68,16 +69,18 @@ const Endorsements: React.FC = () => {
                         }}
                         className="flex gap-16 items-center"
                     >
-                        {duplicatedPlatforms.map((platform, index) => (
+                        {duplicatedAssetClasses.map((asset, index) => (
                             <motion.div
                                 key={index}
                                 whileHover={{ scale: 1.1 }}
-                                className="flex flex-col items-center gap-4 min-w-fit opacity-70 hover:opacity-100 transition-opacity"
-                                style={{ color: platform.color }}
+                                className="flex flex-col items-center gap-4 min-w-fit opacity-70 hover:opacity-100 transition-all duration-300"
+                                style={{ color: asset.color }}
                             >
-                                {platform.icon}
-                                <span className="text-sm font-semibold text-foreground">
-                                    {platform.name}
+                                <div className="p-4 bg-gray-50 rounded-xl hover:shadow-lg transition-all duration-300">
+                                    {asset.icon}
+                                </div>
+                                <span className="text-sm font-semibold text-gray-700">
+                                    {asset.name}
                                 </span>
                             </motion.div>
                         ))}
@@ -89,10 +92,10 @@ const Endorsements: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                     viewport={{ once: true }}
-                    className="text-center mt-12"
+                    className="text-center mt-16"
                 >
-                    <p className="text-2xl font-bold text-foreground">
-                        Ready to turn your influence into investment opportunities?
+                    <p className="text-2xl font-bold text-black">
+                        Ready to invest in the future of culture?
                     </p>
                 </motion.div>
             </Container>

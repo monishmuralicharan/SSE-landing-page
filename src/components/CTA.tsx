@@ -2,26 +2,28 @@ import { ctaDetails } from "@/data/cta"
 
 const CTA: React.FC = () => {
     return (
-        <section id="cta" className="mt-10 mb-5 lg:my-20">
-            <div className="relative h-full w-full z-10 mx-auto py-12 sm:py-20">
-                <div className="h-full w-full">
-                    <div className="rounded-3xl opacity-95 absolute inset-0 -z-10 h-full w-full bg-[#050a02] bg-[linear-gradient(to_right,#12170f_1px,transparent_1px),linear-gradient(to_bottom,#12170f_1px,transparent_1px)] bg-[size:6rem_4rem]">
-                        <div className="rounded-3xl absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_600px_at_50%_500px,#1C1C02,transparent)]"></div>
-                    </div>
+        <section id="cta" className="section-padding bg-gradient-to-b from-blue-50 to-blue-100">
+            <div className="relative mx-auto py-16 sm:py-24">
+                <div className="relative z-10 text-center px-5 max-w-4xl mx-auto">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
+                        Be Among the First to Invest in Culture
+                    </h2>
 
-                    <div className="h-full flex flex-col items-center justify-center text-white text-center px-5">
-                        <h2 className="text-2xl sm:text-3xl md:text-5xl md:leading-tight font-semibold mb-4 max-w-2xl">{ctaDetails.heading}</h2>
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Join our waitlist to get early access to the world's first social stock exchange. 
+                        Invest in creators, trends, and culture before anyone else.
+                    </p>
 
-                        <p className="mx-auto max-w-xl md:px-5">{ctaDetails.subheading}</p>
-
-                        <div className="mt-6 flex flex-col sm:flex-row items-center sm:gap-4">
-                            <button className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors font-semibold">
-                                Join the Community
-                            </button>
-                            <button className="text-white border border-white hover:bg-white hover:text-black px-8 py-3 rounded-full transition-colors font-semibold mt-3 sm:mt-0">
-                                Contact Us
-                            </button>
-                        </div>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2">
+                            <span>Join Waitlist</span>
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </button>
+                        <button className="text-blue-600 hover:text-blue-700 underline font-medium text-lg transition-colors">
+                            Contact Us
+                        </button>
                     </div>
                 </div>
             </div>
