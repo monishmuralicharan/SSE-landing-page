@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
     return (
         <section
             id="hero"
-            className="relative flex items-center justify-center min-h-screen px-5 overflow-hidden hero-bg"
+            className="relative flex items-center justify-center min-h-screen px-5 overflow-hidden hero-bg pt-20 md:pt-32"
         >
             {/* Subtle background elements like Cluely */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:60px_60px]"></div>

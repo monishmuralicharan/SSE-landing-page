@@ -135,7 +135,7 @@ const WaitlistForm: React.FC = () => {
 
                         <textarea
                             name="primary_influence_platform"
-                            placeholder="What interests you most? (e.g., Creator investing, Sports trading, Viral trends, etc.)"
+                            placeholder="Who do you want to see on the exchange? (Creators, influencers, athletes, politicians, or anyone with a social influence)"
                             value={formData.primary_influence_platform}
                             onChange={handleInputChange}
                             required
