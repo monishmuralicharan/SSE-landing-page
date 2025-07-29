@@ -91,7 +91,7 @@ const WaitlistForm: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         Join thousands of investors who are ready to invest in culture, creators, and trends. 
-                        Be among the first to access the world's first social stock exchange.
+                        Be among the first to access the world&apos;s first social stock exchange.
                     </motion.p>
 
                     <motion.form 

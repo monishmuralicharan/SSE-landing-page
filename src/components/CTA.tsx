@@ -1,5 +1,3 @@
-import { ctaDetails } from "@/data/cta"
-
 const CTA: React.FC = () => {
     return (
         <section id="cta" className="section-padding bg-gradient-to-b from-blue-50 to-blue-100">
@@ -10,7 +8,7 @@ const CTA: React.FC = () => {
                     </h2>
 
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                        Join our waitlist to get early access to the world's first social stock exchange. 
+                        Join our waitlist to get early access to the world&apos;s first social stock exchange. 
                         Invest in creators, trends, and culture before anyone else.
                     </p>
 

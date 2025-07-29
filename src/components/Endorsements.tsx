@@ -7,13 +7,8 @@ import {
     FaTwitter, 
     FaInstagram, 
     FaTiktok, 
-    FaFacebook, 
-    FaReddit, 
     FaDiscord,
-    FaTwitch,
-    FaSnapchatGhost,
-    FaPinterest,
-    FaLinkedin
+    FaTwitch
 } from 'react-icons/fa';
 import { HiLightningBolt, HiGlobe, HiChartBar, HiStar, HiFire } from 'react-icons/hi';
 import Container from './Container';
@@ -53,7 +48,7 @@ const Endorsements: React.FC = () => {
                         </h2>
                     </SectionTitle>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        From creator stocks to viral trends, SSE offers investment opportunities you won't find anywhere else
+                        From creator stocks to viral trends, SSE offers investment opportunities you won&apos;t find anywhere else
                     </p>
                 </motion.div>
 

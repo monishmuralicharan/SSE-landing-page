@@ -1,25 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { heroDetails } from '@/data/hero';
 
 const Hero: React.FC = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-        };
-
-        window.addEventListener('mousemove', updateMousePosition);
-
-        return () => {
-            window.removeEventListener('mousemove', updateMousePosition);
-        };
-    }, []);
 
     const scrollToWaitlist = () => {
         document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' });
