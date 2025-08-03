@@ -19,6 +19,6 @@ export const faqs: IFAQ[] = [
     },
     {
         question: "How are stock prices determined?",
-        answer: "Stock prices are based on real-time social metrics including follower growth, engagement rates, content performance, major life events, sponsorship deals, and overall social sentiment across all your platforms."
+        answer: "Fans can purchase shares in their favorite creators, and stock prices fluctuate based on how fans react to real-time social metrics, events, and major announcements."
     }
 ];
