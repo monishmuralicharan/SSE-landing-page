@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: siteDetails.metadata.description,
   icons: {
     icon: '/favicon.ico',
-    apple: 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/first_section_picture.png',
+    apple: 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/socials_picture.png',
   },
   openGraph: {
     title: siteDetails.metadata.title,
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     locale: siteDetails.locale,
     images: [
       {
-        url: 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/first_section_picture.png',
+        url: 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/socials_picture.png',
         width: 1200,
         height: 675,
         alt: siteDetails.siteName,
       },
       {
-        url: 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/first_section_picture.png',
+        url: 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/socials_picture.png',
         width: 1200,
         height: 630,
         alt: siteDetails.siteName,
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteDetails.metadata.title,
     description: siteDetails.metadata.description,
-    images: ['https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/first_section_picture.png'],
+    images: ['https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/socials_picture.png'],
   },
   other: {
-    'msapplication-TileImage': 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/first_section_picture.png',
+    'msapplication-TileImage': 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/socials_picture.png',
     'msapplication-TileColor': '#000000',
   },
 };
