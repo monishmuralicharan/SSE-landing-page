@@ -254,7 +254,7 @@ const IntroSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-thin mb-8 max-w-4xl mx-auto px-8 md:px-16" style={{ color: 'var(--light-text)' }}>
-            SSE is the world's first hybrid exchange combining sports betting excitement with traditional stock market investing. Invest in creators, trends, teams, and ideas that matter to you.
+            SSE is the world&apos;s first hybrid exchange combining sports betting excitement with traditional stock market investing. Invest in creators, trends, teams, and ideas that matter to you.
           </h2>
         </motion.div>
       </div>
@@ -293,7 +293,7 @@ const AssetClassesSection = () => {
         <div className="container">
           <h2 className="heading-section">Invest in Diverse Asset Classes</h2>
           <p className="text-supporting">
-            From creator stocks to viral trends, SSE offers investment opportunities you won't find anywhere else
+            From creator stocks to viral trends, SSE offers investment opportunities you won&apos;t find anywhere else
           </p>
         </div>
       </motion.div>
@@ -431,7 +431,7 @@ const FAQSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-wider mb-6" style={{ color: 'var(--primary-green)' }}>FAQ'S</p>
+          <p className="text-sm font-semibold uppercase tracking-wider mb-6" style={{ color: 'var(--primary-green)' }}>FAQ&apos;S</p>
           <h2 className="heading-section">Frequently Asked Questions</h2>
           <p className="text-supporting">Everything you need to know about SSE</p>
           <a href="mailto:thesocialstockexchange@gmail.com" 
@@ -576,7 +576,7 @@ const LastCTASection = () => {
         >
           <h2 className="heading-section">Ready to Join the Revolution?</h2>
           <p className="text-supporting">
-            Get early access to the world's first social stock exchange. Join thousands of creators and investors who are already transforming how we think about influence as an asset.
+            Get early access to the world&apos;s first social stock exchange. Join thousands of creators and investors who are already transforming how we think about influence as an asset.
           </p>
 
           <motion.form

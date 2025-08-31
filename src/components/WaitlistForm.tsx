@@ -92,10 +92,10 @@ const WaitlistForm: React.FC = () => {
             window.console.error('Error constructor:', err?.constructor?.name)
             window.console.error('Error instanceof Error:', err instanceof Error)
             window.console.error('Full error object:', err)
-            window.console.error('Error name:', (err as any)?.name)
-            window.console.error('Error message:', (err as any)?.message)
-            window.console.error('Error stack:', (err as any)?.stack)
-            window.console.error('Error cause:', (err as any)?.cause)
+            window.console.error('Error name:', err && typeof err === 'object' && 'name' in err ? (err as Error).name : undefined)
+            window.console.error('Error message:', err && typeof err === 'object' && 'message' in err ? (err as Error).message : undefined)
+            window.console.error('Error stack:', err && typeof err === 'object' && 'stack' in err ? (err as Error).stack : undefined)
+            window.console.error('Error cause:', err && typeof err === 'object' && 'cause' in err ? (err as Error & { cause?: unknown }).cause : undefined)
             
             // Check if it's a network error
             if (err instanceof TypeError && err.message.includes('fetch')) {
