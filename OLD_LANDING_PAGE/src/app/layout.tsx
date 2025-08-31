@@ -1,24 +1,29 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Script from 'next/script';
+import { Inter } from "next/font/google";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteDetails.siteUrl),
   title: siteDetails.metadata.title,
   description: siteDetails.metadata.description,
   icons: {
-    icon: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: '/favicon.ico',
+    apple: 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/socials-picture-08-19-25.png',
   },
   openGraph: {
-    type: 'website',
     title: siteDetails.metadata.title,
     description: siteDetails.metadata.description,
     url: siteDetails.siteUrl,
     siteName: siteDetails.siteName,
+    type: 'website',
     locale: siteDetails.locale,
     images: [
       {
@@ -44,7 +49,6 @@ export const metadata: Metadata = {
   other: {
     'msapplication-TileImage': 'https://skfqtizduqveimuroymj.supabase.co/storage/v1/object/public/stock-images/socials-picture-08-19-25.png',
     'msapplication-TileColor': '#000000',
-    'robots': 'max-image-preview:large',
   },
 };
 
@@ -55,24 +59,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content="Framer df7882f" />
-        
-        {/* Fonts */}
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="anonymous" />
-        
-        {/* Framer Script */}
-        <Script 
-          async 
-          src="https://events.framer.com/script?v=2" 
-          data-fid="331f85bd23cbbe9ef5c3142dabe5dc54c6fc6a1b24c63a8799766d2153d0b332" 
-          data-no-nt 
-        />
-      </head>
-      <body>
+      <body
+        className={`${inter.className} antialiased`}
+      >
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
-        {children}
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

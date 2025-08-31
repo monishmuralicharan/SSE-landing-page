@@ -14,7 +14,6 @@ const WaitlistForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState('');
-    const [testResult, setTestResult] = useState('');
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -24,61 +23,13 @@ const WaitlistForm: React.FC = () => {
         }));
     };
 
-    const testSupabaseConnection = async () => {
-        window.console.log('=== TESTING SUPABASE CONNECTION ===')
-        setTestResult('Testing connection...')
-        
-        try {
-            window.console.log('Testing basic Supabase client...')
-            
-            // Import the supabase client directly
-            const { supabase } = await import('@/lib/supabase')
-            window.console.log('Supabase client imported:', !!supabase)
-            
-            // Test a simple query to the table
-            window.console.log('Attempting to query sse_waitlist table...')
-            const { data, error, count } = await supabase
-                .from('sse_waitlist')
-                .select('*', { count: 'exact', head: true })
-                .limit(0)
-            
-            window.console.log('Query result:', { data, error, count })
-            
-            if (error) {
-                window.console.error('❌ Connection test failed:', error)
-                setTestResult(`❌ Connection failed: ${error.message}`)
-            } else {
-                window.console.log('✅ Connection test successful!')
-                setTestResult(`✅ Connection successful! Table has ${count || 0} entries.`)
-            }
-        } catch (err) {
-            window.console.error('❌ Connection test error:', err)
-            setTestResult(`❌ Test error: ${err instanceof Error ? err.message : String(err)}`)
-        }
-    };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         setError('');
 
-        // Use window.console to ensure it appears in browser
-        window.console.log('=== WAITLIST FORM SUBMISSION STARTED ===')
-        window.console.log('Form data being submitted:', formData)
-        window.console.log('Browser info:', {
-            userAgent: navigator.userAgent,
-            url: window.location.href,
-            timestamp: new Date().toISOString()
-        })
-
         try {
-            window.console.log('About to call addToWaitlist function...')
-            window.console.log('addToWaitlist function exists?', typeof addToWaitlist)
-            
-            const result = await addToWaitlist(formData);
-            
-            window.console.log('✅ addToWaitlist call completed successfully!')
-            window.console.log('Result:', result)
+            await addToWaitlist(formData);
             setIsSubmitted(true);
             setFormData({
                 first_name: '',
@@ -87,26 +38,8 @@ const WaitlistForm: React.FC = () => {
                 primary_influence_platform: ''
             });
         } catch (err) {
-            window.console.error('❌ FORM SUBMISSION ERROR CAUGHT:')
-            window.console.error('Error type:', typeof err)
-            window.console.error('Error constructor:', err?.constructor?.name)
-            window.console.error('Error instanceof Error:', err instanceof Error)
-            window.console.error('Full error object:', err)
-            window.console.error('Error name:', (err as any)?.name)
-            window.console.error('Error message:', (err as any)?.message)
-            window.console.error('Error stack:', (err as any)?.stack)
-            window.console.error('Error cause:', (err as any)?.cause)
-            
-            // Check if it's a network error
-            if (err instanceof TypeError && err.message.includes('fetch')) {
-                window.console.error('🌐 This appears to be a network/fetch error')
-            }
-            
-            const errorMessage = err instanceof Error ? err.message : 'Something went wrong. Please try again.'
-            window.console.error('Setting user-facing error message:', errorMessage)
-            setError(errorMessage);
+            setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
         } finally {
-            window.console.log('Form submission process completed, setting isSubmitting to false')
             setIsSubmitting(false);
         }
     };
@@ -214,36 +147,20 @@ const WaitlistForm: React.FC = () => {
                             <p className="text-red-500 text-sm">{error}</p>
                         )}
 
-                        {testResult && (
-                            <p className={`text-sm ${testResult.includes('✅') ? 'text-green-600' : 'text-red-500'}`}>
-                                {testResult}
-                            </p>
-                        )}
-
-                        <div className="flex flex-col gap-3">
-                            <button
-                                type="button"
-                                onClick={testSupabaseConnection}
-                                className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-all duration-200 font-medium text-base"
-                            >
-                                🔍 Test Database Connection
-                            </button>
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                            >
-                                {isSubmitting ? 'Joining...' : (
-                                    <>
-                                        <span>Join Waitlist</span>
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                        </svg>
-                                    </>
-                                )}
-                            </button>
-                        </div>
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        >
+                            {isSubmitting ? 'Joining...' : (
+                                <>
+                                    <span>Join Waitlist</span>
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                    </svg>
+                                </>
+                            )}
+                        </button>
                     </motion.form>
                 </div>
             </div>

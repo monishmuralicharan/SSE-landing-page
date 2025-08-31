@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #000000;
+  --secondary: #3b82f6;
+
+  --primary-accent: #1f2937;
+  --foreground-accent: #6b7280;
+  --hero-background: #f0f9ff;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply text-base leading-relaxed;
+  
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p, span, div, a, button, input, textarea {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cluely-style button styles */
+.btn-primary {
+  @apply bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply text-blue-600 hover:text-blue-700 underline font-medium transition-colors;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 p-6 border border-gray-100;
+}
+
+/* Section styles */
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  @apply bg-gradient-to-b from-blue-50 to-blue-100;
+}
+
+/* Cluely-style hero background */
+.hero-bg {
+  @apply bg-gradient-to-b from-blue-50 via-blue-50 to-blue-100;
+}
+
+#logos svg {
+  @apply w-fit h-10 sm:h-12;
+}
+
+.benefit-section:last-of-type > div {
+  @apply mb-10;
+}

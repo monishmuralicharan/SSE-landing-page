@@ -55,14 +55,14 @@ const Endorsements: React.FC = () => {
                 <div className="relative">
                     <motion.div
                         animate={{
-                            x: ["0%", "-100%"]
+                            x: ["0%", "-50%"]
                         }}
                         transition={{
-                            duration: 80,
+                            duration: 40,
                             repeat: Infinity,
                             ease: "linear"
                         }}
-                        className="flex gap-24 items-center"
+                        className="flex gap-16 items-center"
                     >
                         {duplicatedAssetClasses.map((asset, index) => (
                             <motion.div

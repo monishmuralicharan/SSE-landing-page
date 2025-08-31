@@ -1,0 +1,12 @@
+{
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "functions": {
+    "src/app/**/*.{js,ts,tsx}": {
+      "maxDuration": 30
+    }
+  }
+} 

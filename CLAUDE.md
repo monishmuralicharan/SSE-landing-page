@@ -67,6 +67,13 @@ To update site content, modify files in `src/data/`:
 
 ### Build Considerations
 - Static site generation optimized for performance
-- Vercel deployment configuration included
+- Vercel deployment configuration included (`vercel.json`)
 - All dependencies locked with package-lock.json
 - TypeScript strict mode enabled
+
+### Important Notes
+- Supabase client includes extensive debug logging for troubleshooting connection issues
+- Custom CSS variables defined in `globals.css` for theming
+- Waitlist form uses TypeScript interface `WaitlistEntry` from `src/lib/supabase.ts`
+- Project uses Inter font family loaded in layout
+- All components are fully typed with TypeScript interfaces
