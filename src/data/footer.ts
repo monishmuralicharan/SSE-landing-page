@@ -24,6 +24,10 @@ export const footerDetails: {
         {
             text: "FAQs",
             url: "#faq"
+        },
+        {
+            text: "Privacy Policy",
+            url: "/privacy"
         }
     ],
     email: 'contact@socialstockexchange.com',
