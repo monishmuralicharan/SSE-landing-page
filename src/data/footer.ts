@@ -7,7 +7,7 @@ export const footerDetails: {
     telephone: string;
     socials: ISocials;
 } = {
-    subheading: "The world's first social stock exchange where influence meets investment. Transform your social capital into real financial opportunities.",
+    subheading: "The world's first social stock exchange where influence meets investment.",
     quickLinks: [
         {
             text: "About Us",
